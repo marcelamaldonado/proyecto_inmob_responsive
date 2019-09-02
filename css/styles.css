@@ -401,18 +401,22 @@ text-align: center;
 =            CSS PARA PAGINAS INTERNAS            =
 =============================================*/
 /** NOSOTROS **/
-.contenido_nosotros { /** padre **/
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); /** 50% 50% defino que los hijos ocupen asi el espacio del contenedor padre, en vez de usar display flex **/
-    grid-column-gap: 2rem; /** si usamos grid y necesitamos un paddin o magen, usamos esta propiedad gap **/  
+@media (min-width: 768px) {
+    .contenido_nosotros { /** padre **/
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); /** 50% 50% defino que los hijos ocupen asi el espacio del contenedor padre, en vez de usar display flex **/
+        grid-column-gap: 2rem; /** si usamos grid y necesitamos un paddin o magen, usamos esta propiedad gap **/  
+    }
+    
 }
 .texto_nosotros blockquote {
-  font-weight: 900;
-  font-size: 2rem;
-  margin: 0;
-  padding: 1rem 0 3rem 0;
-
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 0;
+    padding: 1rem 0 3rem 0;
 }
+
+
 
 /** ANUNCIO **/
 .resumen_propiedad{
