@@ -168,7 +168,28 @@ padding: 1rem 0 3rem 0; /** arriba, derecha abajo,izquierda **/
         color: #71b100;
     }
     
-
+    
+    /*----------  Mobile Menu  ----------*/
+    .mobile_menu img {
+        width: 5rem;
+    }
+    @media (min-width: 768px) {
+        .mobile_menu {
+            display: none;
+        }
+    }
+    .navegacion:target {
+        display: block;
+    }
+    .navegacion {
+        display: none;
+    }
+    @media (min-width: 768px) {
+        .navegacion {
+            display: block;
+        }
+        
+    }
     
     /*----------  ICONOS NOSOTROS  ----------*/
     @media (min-width: 768px) {
