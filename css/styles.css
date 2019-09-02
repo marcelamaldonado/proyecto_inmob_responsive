@@ -199,18 +199,21 @@ padding: 1rem 0 3rem 0; /** arriba, derecha abajo,izquierda **/
 /** ANUNCIOS **/
 
 @media (min-width: 768px) {
-    
+    .contenedor_anuncios{ /* padre de anuncio */
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;  /* esto separa los anuncios y los posiciona debajo */
+        }
 }
-.contenedor_anuncios{ /* padre de anuncio */
-display: flex;
-justify-content: space-between;
-flex-wrap: wrap;  /* esto separa los anuncios y los posiciona debajo */
-}
-.anuncio{ /* hijo de contenedor anuncios */
-flex: 0 0 calc(33.3% - 1.6rem); /** grow shrink flex-basis **/
+@media (min-width: 768px) {
+   .anuncio {
+    flex: 0 0 calc(33.3% - 1.6rem); /** grow shrink flex-basis **/
 /** flex-grow: 0;  el contenido crece 
 flex-shrink: 0; es para que no se ajuste al contenedor, osea se encoja, por defaul es 1, y que tome el tamaño de la base en este caso 33.33% 
 flex-basis: calc(33.3% - 1.6rem); **/
+   } 
+}
+.anuncio{ /* hijo de contenedor anuncios */
 border: 1px solid #b5b5b5;
 background-color: #f5f5f5;
 margin-bottom: 2rem;
@@ -261,7 +264,8 @@ margin: 0;  /** para sacar el margen a h3 y p solo del contenedor anuncio, de es
     align-items: center;
 }
 .contenedor_contacto{
-    flex: 1; /** detecta cuanto tamaño tiene el contenedor y lo divide por 1 y el resultado se lo asigna a ese elemento **/
+    flex: 0 0 95%;
+    /** flex: 1;  detecta cuanto tamaño tiene el contenedor y lo divide por 1 y el resultado se lo asigna a ese elemento **/
     color: white;
 }
 .contenedor_contacto p {
@@ -273,30 +277,41 @@ font-size: 1.8rem;
 /*=============================================
 =            BLOG Y TESTIMONIALES            =
 =============================================*/
-.seccion-inferior{
-display: flex;
-justify-content: space-between;
+@media (min-width: 768px) {
+    .seccion-inferior{
+        display: flex;
+        justify-content: space-between;
+        }
+        .seccion-inferior .blog{
+        flex-basis: 60%;
+        }
+        .seccion-inferior .testimoniales{
+        flex-basis: calc(40% - 2rem);
+        }
 }
-.seccion-inferior .blog{
-flex-basis: 60%;
-}
-.seccion-inferior .testimoniales{
-flex-basis: calc(40% - 2rem);
-}
+
 .entrada_blog{
+    
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .entrada_blog {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2rem;
+}
 }
 .entrada_blog:last-of-type{
     margin-bottom: 0;
 }
-.entrada_blog .imagen_blog{
-   flex-basis: 40%; 
+@media (min-width: 768px) {
+    .entrada_blog .imagen_blog{
+        flex-basis: 40%; 
+     }
+     .entrada_blog .texto_entrada{
+         flex-basis: calc(60% - 3rem);
+     } 
 }
-.entrada_blog .texto_entrada{
-    flex-basis: calc(60% - 3rem);
-}
+
 .entrada_blog a{
     color: black;
     text-decoration: none;
@@ -356,8 +371,23 @@ margin: 0;
 }
 .contenedor_footer { /** el padre donde se pone flex y justify **/
 padding: 3rem 0;
-display: flex;
-justify-content: space-between;
+text-align: center;
+
+}
+@media (min-width: 768px) {
+    .contenedor_footer {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.site_footer nav {
+    display: none;
+}
+@media (min-width: 768px) {
+    .site_footer nav {
+ display: block;
+    }
+    
 }
 .copyright {
     margin: 0;
